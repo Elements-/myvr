@@ -37,6 +37,33 @@ module.exports = function(API_KEY) {
           path: '/reservation-payments/'
         }, args, cb)
       }
+    },
+    // CONTACTS API
+    contacts: {
+      create: function(args, cb) {
+        doRequest({
+          method: 'POST',
+          path: '/contacts/'
+        }, args, cb)
+      },
+      get: function(key, cb) {
+        doRequest({
+          method: 'GET',
+          path: '/contacts/' + key
+        }, null, cb)
+      },
+      update: function(key, args, cb) {
+        doRequest({
+          method: 'PUT',
+          path: '/contacts/' + key
+        }, args, cb)
+      },
+      list: function(args, cb) {
+        doRequest({
+          method: 'GET',
+          path: '/contacts/'
+        }, args, cb)
+      }
     }
   }
 
@@ -57,7 +84,7 @@ module.exports = function(API_KEY) {
     if(options.method == 'GET') {
       req_object.qs = args
     }
-    else if(options.method == 'POST') {
+    else if(options.method == 'POST' || options.method == 'PUT') {
       req_object.body = args
       req_object.json = true
     }
