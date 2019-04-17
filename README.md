@@ -36,3 +36,17 @@ myvr.contacts.create({ args... }, function(err, contact) {})
 
 myvr.contacts.update('ID', { args... }, function(err, contact) {})
 ```
+
+### Rates
+See full options list at https://developer.myvr.com/api/#/rates
+```javascript
+myvr.rates.get('ID', function(err, rate) {})
+
+myvr.rates.list({ limit: 5 }, function(err, rates) {})
+
+myvr.rates.create({ args... }, function(err, rate) {})
+
+myvr.rates.update('ID', { args... }, function(err, rate) {})
+
+myvr.rates.delete('ID', function(err) {})
+```
