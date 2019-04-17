@@ -64,6 +64,39 @@ module.exports = function(API_KEY) {
           path: '/contacts/'
         }, args, cb)
       }
+    },
+    // RATES API
+    rates: {
+      create: function(args, cb) {
+        doRequest({
+          method: 'POST',
+          path: '/rates/'
+        }, args, cb)
+      },
+      get: function(key, cb) {
+        doRequest({
+          method: 'GET',
+          path: '/rates/' + key
+        }, null, cb)
+      },
+      update: function(key, args, cb) {
+        doRequest({
+          method: 'PUT',
+          path: '/rates/' + key
+        }, args, cb)
+      },
+      delete: function(key, cb) {
+        doRequest({
+          method: 'DELETE',
+          path: '/rates/' + key
+        }, null, cb)
+      },
+      list: function(args, cb) {
+        doRequest({
+          method: 'GET',
+          path: '/rates/'
+        }, args, cb)
+      }
     }
   }
 
