@@ -50,3 +50,23 @@ myvr.rates.update('ID', { args... }, function(err, rate) {})
 
 myvr.rates.delete('ID', function(err) {})
 ```
+
+### Inquiries
+See full options list at https://developer.myvr.com/api/#/inquiries
+```javascript
+myvr.inquiries.get('ID', function(err, inquiry) {})
+
+myvr.inquiries.list({ limit: 5 }, function(err, inquiry) {})
+
+myvr.inquiries.create({ args... }, function(err, inquiry) {})
+```
+
+### Inquiry Messages
+See full options list at https://developer.myvr.com/api/#/inquiry-messages
+```javascript
+myvr.inquiry_messages.get('ID', function(err, message) {})
+
+myvr.inquiry_messages.list({ limit: 5 }, function(err, messages) {})
+
+myvr.inquiry_messages.create({ args... }, function(err, message) {})
+```

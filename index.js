@@ -97,6 +97,48 @@ module.exports = function(API_KEY) {
           path: '/rates/'
         }, args, cb)
       }
+    },
+    // INQUIRY API
+    inquiries: {
+      create: function(args, cb) {
+        doRequest({
+          method: 'POST',
+          path: '/inquiries/'
+        }, args, cb)
+      },
+      get: function(key, cb) {
+        doRequest({
+          method: 'GET',
+          path: '/inquiries/' + key
+        }, null, cb)
+      },
+      list: function(args, cb) {
+        doRequest({
+          method: 'GET',
+          path: '/inquiries/'
+        }, args, cb)
+      }
+    },
+    // INQUIRY-MESSAGES API
+    inquiry_messages: {
+      create: function(args, cb) {
+        doRequest({
+          method: 'POST',
+          path: '/inquiry-messages/'
+        }, args, cb)
+      },
+      get: function(key, cb) {
+        doRequest({
+          method: 'GET',
+          path: '/inquiry-messages/' + key
+        }, null, cb)
+      },
+      list: function(args, cb) {
+        doRequest({
+          method: 'GET',
+          path: '/inquiry-messages/'
+        }, args, cb)
+      }
     }
   }
 
