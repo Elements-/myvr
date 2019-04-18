@@ -151,6 +151,7 @@ module.exports = function(API_KEY) {
     var req_object = {
       url: 'https://api.myvr.com/v1' + options.path,
       method: options.method,
+      json: true,
       auth: {
         user: API_KEY
       }
@@ -161,14 +162,13 @@ module.exports = function(API_KEY) {
     }
     else if(options.method == 'POST' || options.method == 'PUT') {
       req_object.body = args
-      req_object.json = true
     }
 
     request(
       req_object,
       function(err, resp, body) {
         if(err) return cb(err)
-        cb(null, JSON.parse(body))
+        cb(null, body)
       }
     )
   }
