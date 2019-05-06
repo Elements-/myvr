@@ -149,7 +149,7 @@ module.exports = function(API_KEY) {
     }
 
     var req_object = {
-      url: 'https://api.myvr.com/v1' + options.path,
+      url: (options.path.indexOf('http') == -1 ? 'https://api.myvr.com/v1' : '') + options.path,
       method: options.method,
       json: true,
       auth: {
